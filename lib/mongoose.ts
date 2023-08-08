@@ -14,8 +14,10 @@ export const connectToDB = async () => {
     return;
   }
 
+  const mongodbUrl: string =
+    "mongodb+srv://tinkukumar:zHBYIleTI48jAbBY@cluster0.zm0r6pg.mongodb.net/threads?retryWrites=true&w=majorit";
   try {
-    await mongoose.connect(process.env.MONGODB_URL);
+    await mongoose.connect(mongodbUrl);
 
     isConnected = true; // Set the connection status to true
     console.log("MongoDB connected");
